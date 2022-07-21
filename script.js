@@ -48,9 +48,9 @@ const prevLastDay = new Date(
   date.getMonth(),0,
   0
 ).getDate();
-console.log(prevLastDay); 
+// console.log(prevLastDay); 
 const prevDayIndex = date.getDay();
-console.log(prevDayIndex);
+// console.log(prevDayIndex);
 for (let x = prevDayIndex; x > 0; x--){
   days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   document.querySelector(".days").innerHTML = days;
@@ -69,3 +69,18 @@ for (let i = 1; i <= lastDay ; i++){
 }
 
 
+//TODO:Display last days of the months
+const nextFirstDay = new Date(
+  date.getFullYear(),
+  date.getMonth()+2,1
+).getDate();
+console.log(nextFirstDay);
+
+//TODO:Determine the first day of the month - WEDNESDAY
+const nextDayIndex = date.getDay();
+console.log(nextDayIndex);
+
+for (let j = 1; j <= nextDayIndex; j ++){
+  days += `<div class="next-date">${j}</div>`;
+   document.querySelector(".days").innerHTML = days;
+}
