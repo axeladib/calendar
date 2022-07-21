@@ -61,8 +61,16 @@ for (let x = prevDayIndex; x > 0; x--){
 //TODO:Make the last day dynamic to the current month
 const lastDay = new Date(date.getFullYear(), date.getMonth()+1,0).getDate();
 // console.log(lastDay);
+//TODO:Highlighting current day
 for (let i = 1; i <= lastDay ; i++){
   // console.log(i);
+  // if (i === new Date().getDate() && date.getMonth() === new Date().getMonth()) {
+  //   days += `<div classelse {
+
+  //   }}=""today">${i}</div>`
+  // } else {
+  //  days += `<div> </div>`;
+  // }
   days += `<div>${i}</div>`;
   // console.log(days);
   document.querySelector(".days").innerHTML = days;
@@ -73,14 +81,14 @@ for (let i = 1; i <= lastDay ; i++){
 const nextFirstDay = new Date(
   date.getFullYear(),
   date.getMonth()+2,1
-).getDate();
+).getDay();
 console.log(nextFirstDay);
 
 //TODO:Determine the first day of the month - WEDNESDAY
-const nextDayIndex = date.getDay();
-console.log(nextDayIndex);
+// const nextDayIndex = date.getDay();
+// console.log(nextDayIndex);
 
-for (let j = 1; j <= nextDayIndex; j ++){
+for (let j = 1; j < nextFirstDay; j ++){
   days += `<div class="next-date">${j}</div>`;
    document.querySelector(".days").innerHTML = days;
 }
