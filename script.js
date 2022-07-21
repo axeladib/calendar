@@ -25,10 +25,26 @@ const months = [
 //TODO:Select the h1 month and change it
 let currentMonth = months[date.getMonth()];
 // console.log(currentMonth);
-document.getElementById("month").innerHTML = currentMonth;
+document.getElementById("month").innerHTML = currentMonth; 
 
 
-//TODO:Display the day,month,date,year in 1 string
+//TODO:Display the day,month,date,year in 1 stringg
 const currentDate = date.toDateString();
 document.getElementById("day").innerHTML = currentDate;
 console.log(currentDate);
+
+
+//TODO:Display the number of days in 1 month dynamically
+//TODO:Select the div that wanted to be inserted 
+// console.log(daysOfMonth);
+//TODO:Empty string
+let days = "";
+//TODO:Make the last day dynamic to the current month
+const lastDay = new Date(date.getFullYear(), date.getMonth()+1,0).getDate();
+console.log(lastDay);
+for (let i = 1; i <= lastDay ; i++){
+  // console.log(i);
+  days += `<div>${i}</div>`;
+  // console.log(days);
+  document.querySelector(".days").innerHTML = days;
+}
